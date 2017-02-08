@@ -1,0 +1,251 @@
+{
+    "key": "group_58865b6a14561",
+    "title": "Attributes",
+    "fields": [
+        {
+            "taxonomy": "pa_stone",
+            "field_type": "select",
+            "multiple": 0,
+            "allow_null": 0,
+            "return_format": "object",
+            "add_term": 1,
+            "load_terms": 1,
+            "save_terms": 1,
+            "key": "field_58865b9386928",
+            "label": "Stone",
+            "name": "gem_stone",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "taxonomy": "pa_color",
+            "field_type": "select",
+            "multiple": 0,
+            "allow_null": 0,
+            "return_format": "object",
+            "add_term": 1,
+            "load_terms": 1,
+            "save_terms": 1,
+            "key": "field_58865e3997c9c",
+            "label": "Color",
+            "name": "gem_color",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "taxonomy": "pa_origin",
+            "field_type": "select",
+            "multiple": 0,
+            "allow_null": 0,
+            "return_format": "object",
+            "add_term": 1,
+            "load_terms": 1,
+            "save_terms": 1,
+            "key": "field_58865e8f7d24c",
+            "label": "Origin",
+            "name": "gem_origin",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "taxonomy": "pa_treatment",
+            "field_type": "select",
+            "multiple": 0,
+            "allow_null": 0,
+            "return_format": "object",
+            "add_term": 1,
+            "load_terms": 1,
+            "save_terms": 1,
+            "key": "field_58865ec67d24d",
+            "label": "Treatment",
+            "name": "gem_treatment",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "taxonomy": "pa_shape",
+            "field_type": "select",
+            "multiple": 0,
+            "allow_null": 0,
+            "return_format": "object",
+            "add_term": 0,
+            "load_terms": 1,
+            "save_terms": 1,
+            "key": "field_58865ef37d24f",
+            "label": "Shape",
+            "name": "gem_shape",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "taxonomy": "pa_cut",
+            "field_type": "select",
+            "multiple": 0,
+            "allow_null": 0,
+            "return_format": "object",
+            "add_term": 1,
+            "load_terms": 1,
+            "save_terms": 1,
+            "key": "field_58865fb07d251",
+            "label": "Cut",
+            "name": "gem_cut",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "key": "field_588660307d253",
+            "label": "Length",
+            "name": "gem_length",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "key": "field_588660b07d254",
+            "label": "Width",
+            "name": "gem_width",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "key": "field_588660c37d255",
+            "label": "Weight",
+            "name": "gem_weight",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "key": "field_588660d67d256",
+            "label": "Pieces",
+            "name": "gem_pieces",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "key": "field_588660ec7d257",
+            "label": "Certificate",
+            "name": "gem_certificate",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "product"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1485979965
+}

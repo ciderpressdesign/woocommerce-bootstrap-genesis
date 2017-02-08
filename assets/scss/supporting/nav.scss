@@ -1,0 +1,66 @@
+/* fix styles for layered navigation menus */
+
+.nav-primary + .nav-secondary {
+    margin-top: -1 * $navbar-margin-bottom;
+    z-index: $zindex-navbar - 1;
+}
+
+/* Display Bootstrap Nav Secondary Items even when JavaScript is disabled */
+.no-js .menu-item-has-children:hover .dropdown-menu,
+.no-js .menu-item-has-children:focus .dropdown-menu {
+    display: block;
+}
+
+/* Move navigation below wp-admin bar */
+.logged-in {
+    .navbar-fixed-top {
+        margin-top: 32px; // Move navigation below wp-admin bar
+    }
+}
+
+
+.search-expanding {
+
+    display: inline-block;
+
+    &:hover,
+    &:focus,
+    &:active {
+        .search-field {
+            visibility: visible !important;
+            width: 178px !important;
+            padding: 6px 12px;
+        }
+        .search-submit {
+            cursor: pointer !important;
+            &[disabled] {
+                cursor: pointer;
+            }
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .navbar-form .input-group>.form-control.search-field {
+        //font-size: 15px;
+        width: 0px;
+        padding: 0px;
+        visibility: hidden;
+        //padding: 0;
+        //  @extend .btn-transparent;
+        transition: all .5s;
+
+
+        &:focus {
+
+        }
+
+    }
+
+
+}
+
+
+
+

@@ -1,0 +1,93 @@
+
+.no-js #sidr {
+  display: none;
+}
+
+
+$sidebar-width: 300px;
+$sidebar-width-neg: -$sidebar-width;
+
+.sidr {
+  display: block;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  z-index: 999999;
+  width: $sidebar-width;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &.right {
+    left: auto;
+    right: $sidebar-width-neg;
+  }
+
+  &.left {
+    left: $sidebar-width-neg;
+    right: auto;
+  }
+}
+
+
+.offcanvas {
+
+  background-color: $navbar-inverse-bg;
+
+  .navbar {
+    border: 0px;
+  }
+
+}
+
+.site-overlay {
+  opacity: 0;
+}
+
+.sidr-open .site-overlay {
+    //opacity: .25;
+    //transition: opacity .5s ease-in-out;
+    //-moz-transition: opacity .5s ease-in-out;
+    //-webkit-transition: opacity .5s ease-in-out;
+    //background: black;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: black;
+  z-index: 9999;
+  transition: opacity 0.5s;
+  opacity: 0.7;
+}
+
+
+
+/* make sidebar nav vertical */
+@media (min-width: 768px) {
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+  }
+  .sidebar-nav .navbar ul {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .sidebar-nav .list-inline>li {
+
+    display: inline-block !important;
+
+  }
+}
+
+.sidebar-category-menu, .sidebar-other-menu {
+  border-top: 1px solid #333;
+}

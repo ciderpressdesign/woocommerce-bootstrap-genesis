@@ -1,0 +1,226 @@
+//This is a place for small, reusable components
+
+.cta {
+ // height: 260px;
+  margin: 60px 0px;
+  background-size: cover;
+
+  h1 {
+    font-size: 5em;
+  }
+
+  .cta_content {
+    padding: 70px 60px;
+  }
+
+}
+
+
+//Slide Show
+
+
+#welcome {
+  overflow: hidden;
+  //box-shadow: $section-shadow;
+
+  max-height: 600px;
+
+  .slide-image {
+    max-height: 600px;
+    overflow: hidden;
+    min-width: 300px;
+    img {
+      text-align: center;
+      width: 100%;
+
+    }
+  }
+  .slide-content-container {
+
+    width: 95%;
+    position: relative;
+
+  }
+
+  .slide-content {
+
+    padding-top: 20px;
+
+    @include breakpoint($screen-xs) {
+      position: absolute;
+      bottom: 80px;
+      color: white;
+
+      &.left {
+        text-align: left;
+      }
+
+      &.middle {
+        left: 50%;
+      }
+
+      &.right {
+        right: 0;
+        text-align: right;
+      }
+
+    }
+
+
+    %slide-heading {
+      padding-top: 0px;
+      margin-top: 0px;
+      color: white;
+      line-height: .8;
+    }
+
+    h1 {
+      @extend %slide-heading;
+
+      font-size: 140px;
+      text-transform: uppercase;
+      font-weight:bold;
+      letter-spacing: -8px;
+
+    }
+
+    h2 {
+      @extend %slide-heading;
+      font-size: 66px;
+      letter-spacing: -4px;
+
+    }
+  }
+
+  .carousel-indicators {
+    display: none;
+
+    @include breakpoint($screen-sm) {
+      display: block;
+    }
+
+    width:95%;
+    left: auto;
+    text-align: right;
+    right:0px;
+    bottom: 60px;
+    position: relative;
+    li {
+      margin-left: 5px;
+      border-radius: 0px;
+      width: 12px;
+      height: 12px;
+      margin-bottom: 0px;
+    }
+  }
+
+}
+
+
+// Woocommerce Filters
+
+
+.filter-sort-tabs {
+
+  .page-title {
+    float: left;
+    margin: 0 14px;
+  }
+
+  ul {
+  }
+
+  li {
+    margin-top: 6px;
+    float: right;
+  }
+
+  .tab-close {
+    @extend .glyphicon;
+    @extend .glyphicon-menu-down;
+  }
+  .active .tab-close  {
+      @extend .glyphicon-menu-up;
+
+  }
+
+  li a {
+    color: #555555;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+    cursor: default;
+  }
+
+  li.active a {
+    z-index: 1001;
+  }
+
+  .nav-tabs {
+    border-bottom: none;
+  }
+
+
+
+
+}
+
+.filter-sort-content {
+  z-index: 1000;
+  position: relative;
+
+  .tab-pane.active {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-right: 2px;
+    border-radius: 5px 0px 5px 5px;
+  }
+
+}
+.loop-product-block {
+
+  .product_image {
+    position: relative;
+
+    .product_overlay_content {
+      margin-top: 50px;
+    }
+
+    .product_overlay {
+      position: absolute;
+      height: 0;
+      width: 100%;
+      overflow: hidden;
+      top: 0;
+      right: 0;
+      transition: .5s;
+      background: lightsalmon;
+    }
+    &:hover .product_overlay {
+      height: 100%;
+    }
+  }
+
+  .home-featured-products & {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+// For logo backgroudnds @todo -- need a better way
+
+.circle-white {
+  background: white;
+  height: 1.6em;
+  width: 1.6em;
+  border-radius: 50%;
+  padding: .3em;
+  color:black;
+}
+
+// Add the active class to is-active
+
+.is-active {
+  @extend .active;
+}
