@@ -1,0 +1,148 @@
+{
+  "key": "group_56fef621b96a4",
+  "title": "Featured Products",
+  "fields": [
+    {
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "key": "field_58a0cee93e6a2",
+      "label": "Header",
+      "name": "featured_products_header",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "sub_fields": [
+        {
+          "layout": "horizontal",
+          "choices": {
+            "product": "Product",
+            "category": "Category"
+          },
+          "default_value": "",
+          "other_choice": 0,
+          "save_other_choice": 0,
+          "allow_null": 0,
+          "return_format": "value",
+          "key": "field_589b79b55bc06",
+          "label": "Type",
+          "name": "featured_type",
+          "type": "radio",
+          "instructions": "",
+          "required": 1,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "20",
+            "class": "",
+            "id": ""
+          }
+        },
+        {
+          "post_type": [
+            "product"
+          ],
+          "taxonomy": [],
+          "allow_null": 0,
+          "multiple": 0,
+          "return_format": "object",
+          "ui": 1,
+          "key": "field_589b7a0e5bc07",
+          "label": "Select Featured Product",
+          "name": "select_featured_product",
+          "type": "post_object",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": [
+            [
+              {
+                "field": "field_589b79b55bc06",
+                "operator": "==",
+                "value": "product"
+              }
+            ]
+          ],
+          "wrapper": {
+            "width": "80",
+            "class": "",
+            "id": ""
+          }
+        },
+        {
+          "taxonomy": "product_cat",
+          "field_type": "select",
+          "multiple": 0,
+          "allow_null": 1,
+          "return_format": "object",
+          "add_term": 0,
+          "load_terms": 0,
+          "save_terms": 0,
+          "key": "field_589b7a4b5bc08",
+          "label": "Select Featured Category",
+          "name": "select_featured_category",
+          "type": "taxonomy",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": [
+            [
+              {
+                "field": "field_589b79b55bc06",
+                "operator": "==",
+                "value": "category"
+              }
+            ]
+          ],
+          "wrapper": {
+            "width": "80",
+            "class": "",
+            "id": ""
+          }
+        }
+      ],
+      "min": 3,
+      "max": 3,
+      "layout": "block",
+      "button_label": "Add",
+      "collapsed": "field_589b79b55bc06",
+      "key": "field_589b79985bc05",
+      "label": "Featured",
+      "name": "featured_products",
+      "type": "repeater",
+      "instructions": "",
+      "required": 1,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      }
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_type",
+        "operator": "==",
+        "value": "front_page"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": 1,
+  "description": "",
+  "modified": 1486933777
+}

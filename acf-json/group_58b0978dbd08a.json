@@ -1,0 +1,48 @@
+{
+  "key": "group_58b0978dbd08a",
+  "title": "Page Image",
+  "fields": [
+    {
+      "key": "field_58b0979542a15",
+      "label": "Image",
+      "name": "page_image",
+      "type": "image_crop",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "crop_type": "hard",
+      "target_size": "shop_single",
+      "width": "",
+      "height": "",
+      "preview_size": "shop_catalog",
+      "force_crop": "yes",
+      "save_in_media_library": "yes",
+      "save_format": "url",
+      "library": "all",
+      "retina_mode": "no"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "page"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": 1,
+  "description": "",
+  "modified": 1487968501
+}

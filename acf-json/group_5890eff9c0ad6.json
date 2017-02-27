@@ -1,0 +1,126 @@
+{
+  "key": "group_5890eff9c0ad6",
+  "title": "Call to Action Banner",
+  "fields": [
+    {
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "key": "field_5890f001774fe",
+      "label": "Headline",
+      "name": "cta_headline",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "key": "field_5890f02c774ff",
+      "label": "Subhead",
+      "name": "cta_subhead",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "key": "field_5890f04777500",
+      "label": "Button Text",
+      "name": "cta_button_text",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "force_crop": "yes",
+      "crop_type": "hard",
+      "preview_size": "bootstrap-featured",
+      "save_format": "url",
+      "save_in_media_library": "yes",
+      "target_size": "gem-banner",
+      "library": "all",
+      "retina_mode": "no",
+      "key": "field_5890f06177501",
+      "label": "Background Image",
+      "name": "cta_background_image",
+      "type": "image_crop",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "width": "",
+      "height": ""
+    },
+    {
+      "post_type": [
+        "page"
+      ],
+      "taxonomy": [],
+      "allow_null": 0,
+      "multiple": 0,
+      "allow_archives": 1,
+      "key": "field_5890f07777502",
+      "label": "Button Link",
+      "name": "cta_button_link",
+      "type": "page_link",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      }
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_type",
+        "operator": "==",
+        "value": "front_page"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": 1,
+  "description": "",
+  "modified": 1487136586
+}

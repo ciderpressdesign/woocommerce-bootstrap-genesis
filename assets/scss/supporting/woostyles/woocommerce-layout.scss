@@ -1,0 +1,317 @@
+/**
+ * woocommerce-layout.scss
+ * Applies layout to the default WooCommerce frontend design
+ */
+
+/**
+ * Styling begins
+ */
+
+.woocommerce, .woocommerce-page {
+
+  /**
+   * General layout styles
+   */
+  .col2-set {
+    @extend .row;
+    width: 100%;
+
+    .col-1 {
+      @extend .col-sm-6;
+    }
+    .col-2 {
+      @extend .col-sm-6;
+    }
+  }
+
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  /**
+   * Product page
+   */
+  div.product,
+  #content div.product {
+    div.images {
+      @extend .col-sm-6;
+
+    }
+
+    div.thumbnails {
+      @include clearfix();
+
+      a {
+        @extend .col-sm-6;
+        margin-bottom: 1em;
+      }
+
+      a.last {
+      }
+
+      a.first {
+      }
+
+      &.columns-1 {
+        a {
+          @extend .col-sm-12;
+        }
+      }
+
+      &.columns-2 {
+        a {
+          @extend .col-sm-6;
+
+        }
+      }
+
+      &.columns-4 {
+        a {
+          @extend .col-sm-3;
+        }
+      }
+
+      &.columns-5 {
+        a {
+          width: 16.9%;
+        }
+      }
+    }
+
+    div.summary {
+      @extend .col-sm-6, .col-sm-offset-6;
+    }
+
+    .woocommerce-tabs {
+      clear: both;
+
+      ul.tabs {
+      }
+    }
+
+    #reviews {
+      .comment {
+      }
+    }
+  }
+
+  /**
+   * Product loops
+   */
+  ul.products {
+    @extend .row;
+    margin-top: 10px;
+
+    li.product {
+      @extend .col-sm-3;
+      @extend .clearfix;
+    }
+
+    li.first {
+    }
+
+    li.last {
+    }
+  }
+
+  &.columns-1 {
+    ul.products {
+      li.product {
+        @extend .col-sm-12;
+
+      }
+    }
+  }
+
+  &.columns-2 {
+    ul.products {
+      li.product {
+        @extend .col-sm-6;
+
+      }
+    }
+  }
+
+  &.columns-3 {
+    ul.products {
+      li.product {
+        @extend .col-sm-4;
+      }
+    }
+  }
+
+  &.columns-5 {
+    ul.products {
+      li.product {
+        width: 16.95%;
+      }
+    }
+  }
+
+  &.columns-6 {
+    ul.products {
+      li.product {
+        @extend .col-sm-2;
+      }
+    }
+  }
+
+  .woocommerce-result-count {
+    float: left;
+  }
+  .woocommerce-ordering {
+    float: right;
+  }
+
+  .woocommerce-pagination {
+    ul.page-numbers {
+    }
+  }
+
+  /**
+   * Cart page
+   */
+  table.cart,
+  #content table.cart {
+    img {
+      height: auto;
+    }
+
+    td.actions {
+      text-align: right;
+
+      .input-text {
+        width: 80px;
+      }
+
+      .coupon {
+        float: left;
+
+        label {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .cart-collaterals {
+    @include clearfix();
+    width: 100%;
+
+    .related {
+      @extend .col-sm-4;
+    }
+
+    .cross-sells {
+      @extend .col-sm-6;
+
+      ul.products {
+        float: none;
+
+        li {
+          @extend .col-sm-6;
+        }
+      }
+    }
+
+    .shipping_calculator {
+      @extend .col-sm-6, .col-sm-offset-6;
+
+      .col2-set {
+        .col-1,
+        .col-2 {
+          @extend .col-sm-6;
+
+        }
+      }
+    }
+
+    .cart_totals {
+      @extend .col-sm-5, .col-sm-offset-7;
+      td {
+        text-align: right;
+      }
+
+    }
+  }
+
+  /**
+   * Cart sidebar
+   */
+  ul.cart_list,
+  ul.product_list_widget {
+    li {
+    }
+  }
+
+  /**
+   * Forms
+   */
+  form {
+    .form-row {
+      @include clearfix();
+
+      label {
+        display: block;
+
+        &.checkbox {
+          display: inline;
+        }
+      }
+
+      select {
+        width: 100%;
+      }
+
+      .input-text {
+        box-sizing: border-box;
+        width: 100%;
+      }
+    }
+
+    .form-row-first,
+    .form-row-last {
+      float: left;
+      width: 47%;
+      overflow: visible;
+    }
+
+    .form-row-last {
+      float: right;
+    }
+
+    .form-row-wide {
+      clear: both;
+    }
+  }
+
+  #payment {
+    .form-row {
+      select {
+        width: auto;
+      }
+    }
+
+    .wc-terms-and-conditions, .terms {
+      text-align: left;
+      padding: 0 1em 0 0;
+      float: left;
+    }
+
+    #place_order {
+      float: right;
+    }
+  }
+}
+
+.woocommerce-account {
+  .woocommerce-MyAccount-navigation {
+    @extend .col-sm-4;
+  }
+
+  .woocommerce-MyAccount-content {
+    @extend .col-sm-8;
+  }
+}
+

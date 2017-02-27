@@ -1,0 +1,69 @@
+{
+  "key": "group_570eb3205b091",
+  "title": "Product Gallery",
+  "fields": [
+    {
+      "key": "field_570eb32643810",
+      "label": "Images",
+      "name": "product_gallery",
+      "type": "repeater",
+      "instructions": "You can change the order by clicking on the number and dragging the images into the positions you want. The first image will be the default product image.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "collapsed": "",
+      "min": 1,
+      "max": 5,
+      "layout": "block",
+      "button_label": "Add",
+      "sub_fields": [
+        {
+          "key": "field_570eb33643811",
+          "label": "Image",
+          "name": "image",
+          "type": "image_crop",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "crop_type": "hard",
+          "target_size": "shop_single",
+          "width": "",
+          "height": "",
+          "preview_size": "thumbnail",
+          "force_crop": "yes",
+          "save_in_media_library": "yes",
+          "retina_mode": "no",
+          "save_format": "object",
+          "library": "all"
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "product"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": 1,
+  "description": "",
+  "modified": 1487829579
+}

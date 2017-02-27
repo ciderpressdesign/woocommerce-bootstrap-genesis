@@ -1,0 +1,82 @@
+{
+  "key": "group_56c63ab1cca4e",
+  "title": "Banner Image",
+  "fields": [
+    {
+      "force_crop": "yes",
+      "crop_type": "hard",
+      "preview_size": "gem-navbar",
+      "save_format": "url",
+      "save_in_media_library": "yes",
+      "target_size": "gem-navbar",
+      "library": "all",
+      "retina_mode": "no",
+      "key": "field_56c63ab875ff5",
+      "label": "Navigation Background Image",
+      "name": "banner_image",
+      "type": "image_crop",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "width": 1200,
+      "height": 300
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_type",
+        "operator": "==",
+        "value": "front_page"
+      }
+    ],
+    [
+      {
+        "param": "options_page",
+        "operator": "==",
+        "value": "acf-options-theme-options"
+      }
+    ],
+    [
+      {
+        "param": "taxonomy",
+        "operator": "==",
+        "value": "product_cat"
+      }
+    ],
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "product"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [
+    "excerpt",
+    "custom_fields",
+    "discussion",
+    "comments",
+    "revisions",
+    "slug",
+    "author",
+    "format",
+    "page_attributes",
+    "categories",
+    "tags",
+    "send-trackbacks"
+  ],
+  "active": 1,
+  "description": "",
+  "modified": 1487289459
+}

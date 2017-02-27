@@ -1,0 +1,71 @@
+/*
+ * Mixin for basic CSS triangles
+ * @include triangle(up, #000, 50px)
+*/
+@mixin triangle($direction:up, $color:#000, $size:100px) {
+  @if ($direction == up) {
+    border-color: transparent transparent $color;
+    border-style: solid;
+    border-width: 0 $size $size;
+    height: 0;
+    width: 0;
+  }
+  @if ($direction == down) {
+    border-color: $color transparent transparent transparent;
+    border-style: solid;
+    border-width: $size;
+    height: 0;
+    width: 0;
+  }
+  @if ($direction == left) {
+    border-color: transparent $color transparent transparent;
+    border-style: solid;
+    border-width: $size $size $size 0;
+    height: 0;
+    width: 0;
+  }
+  @if ($direction == right) {
+    border-color: transparent transparent transparent $color;
+    border-style: solid;
+    border-width: $size 0 $size $size;
+    height: 0;
+    width: 0;
+  }
+}
+
+@mixin image-replacement( $url, $width, $height ) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+%expand {
+
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+%col-no-gutter {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.menu-toggle-arrow {
+  margin-left: 18px;
+  background-image: url(../../images/close.png);
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin-top: 5px;
+  height: 14px;
+  width: 20px;
+  vertical-align: middle;
+
+}
+
+.collapsed .menu-toggle-arrow {
+  //@extend .glyphicon-menu-up;
+  background: url(../../images/menu-down.png) no-repeat;
+  vertical-align: top;
+}
