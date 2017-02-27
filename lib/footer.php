@@ -64,20 +64,22 @@ function bfg_custom_footer() {
                     <div class="col-xs-12 col-sm-3 privacy-sitemap">
                         <div class="row">
                             <div class="col-xs-6 privacy">
-                                <a href="">privacy</a>
+                                <a href="<?php echo get_permalink(get_page_by_path('privacy')) ?>">privacy</a>
                             </div>
                             <div class="col-xs-6 site-map-link">
-                                <a href="">site map</a>
+                                <a href="<?php echo get_permalink(get_page_by_path('site-map')) ?>">site map</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-3 shipping-terms">
                         <div class="row">
                             <div class="col-xs-6 shipping">
-                                <a href="">shipping / returns</a>
+                                <a href="<?php echo get_permalink(get_page_by_path('shippingreturns')) ?>">shipping /
+                                    returns</a>
                             </div>
                             <div class="col-xs-6 terms">
-                                <a href="">terms & conditions</a>
+                                <a href="<?php echo get_permalink(get_page_by_path('terms-conditions')) ?>">terms &
+                                    conditions</a>
                             </div>
                         </div>
                     </div>

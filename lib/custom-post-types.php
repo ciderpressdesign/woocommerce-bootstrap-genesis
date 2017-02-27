@@ -99,7 +99,7 @@ function gem_register_faq()
         "query_var" => true,
         "menu_icon" => "dashicons-format-status",
         "supports" => array('title', 'editor'),
-        "taxonomies" => array('category')
+        "taxonomies" => array('faq_category')
     );
 
     register_post_type("faq", $args);
@@ -133,3 +133,37 @@ function faq_wp_editor_settings($settings, $editor_id)
 }
 
 add_filter('wp_editor_settings', 'faq_wp_editor_settings', 10, 2);
+function gem_rewrite_flush()
+{
+    gem_register_faq();
+    gem_register_testimonial();
+    flush_rewrite_rules();
+}
+
+add_action('after_switch_theme', 'gem_rewrite_flush');
+
+function gem_register_taxonomies()
+{
+// Add new taxonomy, NOT hierarchical (like tags)
+    $labels = array(
+        'name' => _x('Categories', 'taxonomy general name', 'textdomain'),
+        'singular_name' => _x('Category', 'taxonomy singular name', 'textdomain'),
+    );
+
+
+    $args = array(
+        'hierarchical' => false,
+        'labels' => $labels,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'update_count_callback' => '_update_post_term_count',
+        'query_var' => true,
+    );
+
+    register_taxonomy('faq_category', 'faq', $args);
+
+    register_taxonomy_for_object_type('faq_category', 'faq');
+}
+
+add_action('init', 'gem_register_taxonomies');
+
