@@ -11,3 +11,12 @@ $commentBgColor: $body-bg;
 $commentBorderColor: $body-bg;
 $singleCommentBgColor: $panel-default-heading-bg;
 $singleCommentPostAuthorBgColor: $state-warning-bg;
+
+//** Global textual link color.
+$link-alt-color: $brand-primary !default;
+//** Link hover color set via `darken()` function.
+$link-alt-hover-color: darken($link-color, 15%) !default;
+//** Link hover decoration.
+$link-alt-hover-decoration: underline !default;
+
+

@@ -1,0 +1,33 @@
+// Controls the display of blog posts
+
+.entry_date {
+  background: $brand-primary;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+
+  .day {
+    font-size: 20px;
+    @include breakpoint($screen-xs) {
+      font-size: 36px;
+    }
+  }
+}
+
+.entry-date-col {
+
+  @extend %col-no-gutter;
+  //@extend %expand;
+  margin-left: -15px;
+  @include breakpoint($screen-xs) {
+    margin-left: 0;
+  }
+}
+
+.entry.type-post {
+  padding-left: 0px;
+  padding-right: 0px;
+  @extend .col-xs-10;
+  @extend .col-sm-10;
+  @extend .col-md-11;
+}

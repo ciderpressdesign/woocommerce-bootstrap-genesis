@@ -3,108 +3,79 @@
     "title": "Social Networks",
     "fields": [
         {
-            "default_value": "",
-            "placeholder": "",
-            "key": "field_5525e0d292ac5",
-            "label": "Facebook",
-            "name": "facebook",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
+          "sub_fields": [
+            {
+              "default_value": "",
+              "maxlength": "",
+              "placeholder": "",
+              "prepend": "",
+              "append": "",
+              "key": "field_58a7a99ee5169",
+              "label": "Name",
+              "name": "name",
+              "type": "text",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
-            }
-        },
-        {
-            "default_value": "",
-            "placeholder": "",
-            "key": "field_5525e0e992ac6",
-            "label": "Twitter",
-            "name": "twitter",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
+              }
+            },
+            {
+              "return_format": "array",
+              "preview_size": "thumbnail",
+              "library": "all",
+              "min_width": "",
+              "min_height": "",
+              "min_size": "",
+              "max_width": "",
+              "max_height": "",
+              "max_size": "",
+              "mime_types": ".png",
+              "key": "field_58a7a9a6e516a",
+              "label": "Icon",
+              "name": "icon",
+              "type": "image",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
-            }
-        },
-        {
-            "default_value": "",
-            "placeholder": "",
-            "key": "field_5525e0f792ac7",
-            "label": "Instagram",
-            "name": "instagram",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
+              }
+            },
+            {
+              "default_value": "",
+              "maxlength": "",
+              "placeholder": "",
+              "prepend": "",
+              "append": "",
+              "key": "field_58a7a9e0e516b",
+              "label": "Link",
+              "name": "link",
+              "type": "text",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
+              }
             }
-        },
-        {
-            "default_value": "",
-            "placeholder": "",
-            "key": "field_5525e10892ac8",
-            "label": "Linkedin",
-            "name": "linkedin",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "default_value": "",
-            "placeholder": "",
-            "key": "field_5525e11192ac9",
-            "label": "Google+",
-            "name": "google_plus",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "default_value": "",
-            "placeholder": "",
-            "key": "field_5525e12392aca",
-            "label": "Youtube",
-            "name": "youtube",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "default_value": "",
-            "placeholder": "",
-            "key": "field_5525e12c92acb",
-            "label": "Vimeo",
-            "name": "vimeo",
-            "type": "url",
+          ],
+          "min": 0,
+          "max": 5,
+          "layout": "row",
+          "button_label": "Add Social Link",
+          "collapsed": "",
+          "key": "field_58a7a983e5168",
+          "label": "Link",
+          "name": "social_link",
+          "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -132,5 +103,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1486067590
+  "modified": 1487384860
 }

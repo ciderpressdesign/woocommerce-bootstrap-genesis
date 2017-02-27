@@ -12,84 +12,108 @@
 */
 
  add_filter( 'genesis_footer_creds_text', 'bfg_footer_creds_text' );
-function bfg_footer_creds_text( $creds ) {
+function bfg_footer_creds_text()
+{
    // $creds = get_theme_mod( 'creds', '[footer_copyright] &middot; <a href="http://recommendwp.com">RecommendWP</a> &middot; Built on the <a href="http://www.studiopress.com/themes/genesis" title="Genesis Framework">Genesis Framework</a>' );
     // $creds = $credits;
-    $creds = "";
-    return $creds;
+    return "";
 }
 
+remove_action('genesis_footer', 'genesis_footer_markup_open', 5);
+remove_action('genesis_footer', 'genesis_do_footer');
+remove_action('genesis_footer', 'genesis_footer_markup_close', 15);
 
-
-
-add_action("genesis_footer","bfg_custom_footer",9);
+add_action("genesis_after", "bfg_custom_footer", 9);
 
 function bfg_custom_footer() {
 
     ?>
-    <div class="row">
-        <div class="col-sm-4">
-            <?php bfg_footer_menu("OUR PRODUCTS","footer_1") ?>
+    <div class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5">
+                    <?php bfg_footer_menu("OUR PRODUCTS", "footer_1") ?>
+                </div>
+                <div class="col-sm-4">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <?php bfg_footer_menu("ABOUT US", "footer_2") ?>
+                        </div>
+                        <div class="col-xs-6">
+                            <?php bfg_footer_menu("", "footer_3") ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <?php social_links_block() ?>
+                    <?php subscribe_and_save_block() ?>
+                </div>
+            </div>
         </div>
-        <div class="col-sm-2">
-            <?php bfg_footer_menu("ABOUT US","footer_2") ?>
-        </div>
-        <div class="col-sm-3">
-            <?php bfg_footer_menu("","footer_3") ?>
-        </div>
-        <div class="col-sm-3">
-            <?php subscribe_and_save_block() ?>
+        <div class="info-links">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="telephone"><a href="tel:">888-GEM-SYND</a></div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="copyright">
+                            &copy;2017 The Gem Syndicate
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 privacy-sitemap">
+                        <div class="row">
+                            <div class="col-xs-6 privacy">
+                                <a href="">privacy</a>
+                            </div>
+                            <div class="col-xs-6 site-map-link">
+                                <a href="">site map</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 shipping-terms">
+                        <div class="row">
+                            <div class="col-xs-6 shipping">
+                                <a href="">shipping / returns</a>
+                            </div>
+                            <div class="col-xs-6 terms">
+                                <a href="">terms & conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="row">
-             <div class="col-md-2">
-                 <a href="tel:" >888-GEM-SYND</a>
-             </div>
-             <div class="col-md-3">
-                &copy;2017 The Gem Syndicate
-             </div>
-             <div class="col-md-1">
-                 <a href="" >privacy</a>
-             </div>
-             <div class="col-md-1">
-                   <a href="" >site map</a>
-             </div>
-             <div class="col-md-2">
-                 <a href="" >shipping/returns</a>
-             </div>
-             <div class="col-md-2">
-                  <a href="" >terms & conditions</a>
-             </div>
-    </div>
-<?php
+    <?php
 
 }
 
-function bfg_footer_menu($header,$menu_name) {
+function bfg_footer_menu($header, $menu_name)
+{
     ?>
 
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
+    <nav class="<?php echo $menu_name ?>">
+        <div class="footer-nav--header">
                 <h4 class="widgettitle widget-title"><?php echo $header ?></h4>
             </div>
             <?php
-            genesis_nav_menu( array(
+            genesis_nav_menu(array(
                 'theme_location' => $menu_name,
-                'container'       => 'div',
+                'container' => 'div',
                 'container_class' => 'wrap',
-                'menu_class'     => 'nav navbar-nav',
-                'depth'           => 1,
+                'menu_class' => 'nav footer-nav--menu',
+                'depth' => 1,
                 'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
                 'walker' => new wp_bootstrap_navwalker()
-            ) );
+            ));
 
             ?>
-        </div>
     </nav>
     <?php
 }
 
+//Make the long menu wrap
 function atg_menu_classes($classes, $item, $args) {
     if($args->theme_location == 'footer_1') {
         $classes[] = 'col-xs-6';

@@ -16,7 +16,9 @@
 /* Bootstrap Genesis Theme Variables
 ------------------------------------------------------------ */
 @import "supporting/variables-bootstrap-genesis";
-
+/* Mixins
+------------------------------------------------------------ */
+@import "supporting/mixins";
 /* Screen Reader Classes
 ------------------------------------------------------------ */
 @import "supporting/screen-reader-text";
@@ -79,4 +81,27 @@
 /* Modules
 ------------------------------------------------------------ */
 @import "supporting/modules";
-
+/* Slider
+------------------------------------------------------------ */
+@import "supporting/bxslider";
+/* Footer
+------------------------------------------------------------ */
+@import "supporting/footer";
+/* Woocommerce
+------------------------------------------------------------ */
+//@import "supporting/woostyles/woocommerce";
+@import "supporting/woostyles/woocommerce-layout";
+@import "supporting/woostyles/woocommerce-smallscreen";
+@import "supporting/woostyles/woocommerce-overrides";
+/* Elevate Zoom Plus
+-----------------------------------------------------------
+ */
+@import "supporting/elevate-zoom";
+/* Elevate Zoom Plus
+-----------------------------------------------------------
+ */
+@import "supporting/posts";
+/* Sidebar Page
+-----------------------------------------------------------
+ */
+@import "supporting/sidebar-page";

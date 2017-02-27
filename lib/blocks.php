@@ -7,52 +7,102 @@
  */
 
 
-function subscribe_and_save_block() {
+function social_links_block()
+{
     ?>
 
-    <div class="social-and-subscribe">
-        <div class="row">
-                <div class="social btn-group btn-group-justified">
+    <div class="social">
+        <div class="social--links btn-group">
 
-                    <?php $social_links = get_fields('option');
+            <?php
+            // check if the repeater field has rows of data
+            if (have_rows('social_link', 'options')):
 
-                    if( $social_links ) {
-                        foreach ($social_links as $field_name => $value) {
-                            if (!is_empty($value)) {
-                                // get_field_object( $field_name, $post_id, $options )
-                                // - $value has already been loaded for us, no point to load it again in the get_field_object function
-                                $field = get_field_object($field_name, false, array('load_value' => false));
+                // loop through the rows of data
+                while (have_rows('social_link', 'options')) : the_row();
 
-                                ?>
-                                    <a class="btn btn-info <?php $field_name ?>" href="<?php echo $value ?>">
-                                        <?php echo substr($field_name, 0, 1) ?>
-                                    </a>
-                                <?php
-                            }
-                        }
-                    }
-
+                    // display a sub field value
+                    $social_network_name = strtolower(get_sub_field('name'));
+                    $image = get_sub_field('icon');
+                    $social_network_icon = $image['sizes']['gem-icon'];
+                    $social_network_link = get_sub_field('link');
                     ?>
+                    <a class="btn <?php echo $social_network_name ?>" href="<?php echo $social_network_link ?>">
+                        <img src="<?php echo $social_network_icon ?>">
+                    </a>
+                    <?php
 
+                endwhile;
+
+            else :
+
+                // no rows found
+
+            endif;
+            ?>
+
+        </div>
+    </div>
+    <?php
+}
+
+function subscribe_and_save_block()
+{
+    ?>
+    <div class="subscribe-block">
+        <h4>Subscribe & Save</h4>
+        <form>
+            <div class="form-group">
+                <input type="text" name="" id="subscribe-name" class="form-control" placeholder="NAME">
+            </div>
+            <div class="form-group">
+                <input type="text" name="" id="subscribe-email" placeholder="EMAIL" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-sm btn-default pull-right">SUBSCRIBE</button>
+        </form>
+    </div>
+
+
+    <?php
+}
+
+function info_link_block()
+{
+    ?>
+    <div class="info-links">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="telephone"><a href="tel:">888-GEM-SYND</a></div>
                 </div>
-        </div>
-
-            <div class="row">
-                <h4>Subscribe & Save</h4>
-            </div>
-            <div class="row">
-                <form>
-                    <div class="form-group">
-                        <input type="text" name="" id="subscribe-name" class="form-control" placeholder="NAME">
+                <div class="col-sm-3">
+                    <div class="copyright">
+                        &copy;2017 The Gem Syndicate
                     </div>
-                    <div class="form-group">
-                        <input type="text" name="" id="subscribe-email" placeholder="EMAIL" class="form-control">
+                </div>
+                <div class="col-xs-12 col-sm-3 privacy-sitemap">
+                    <div class="row">
+                        <div class="col-xs-6 privacy">
+                            <a href="">privacy</a>
+                        </div>
+                        <div class="col-xs-6 site-map-link">
+                            <a href="">site map</a>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-default pull-right">SUBSCRIBE</button>
-                </form>
+                </div>
+                <div class="col-xs-12 col-sm-3 shipping-terms">
+                    <div class="row">
+                        <div class="col-xs-6 shipping">
+                            <a href="">shipping / returns</a>
+                        </div>
+                        <div class="col-xs-6 terms">
+                            <a href="">terms & conditions</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
 
-
-<?php
+    <?php
 }

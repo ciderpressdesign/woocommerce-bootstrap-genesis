@@ -17,10 +17,12 @@ var gulp = require('gulp'),
     runSequence = require('run-sequence'),
     browserSync = require('browser-sync').create();
     del = require('del');
+sourcemaps = require('gulp-sourcemaps');
 
 // Browser Sync
 gulp.task('browsersync',['styles', 'scripts'], function(){
     browserSync.init({
+        files: "assets/css/app.css",
         proxy: 'http://localhost/gemsyndicate'
     });
 });
@@ -44,7 +46,7 @@ gulp.task('styles', function(){
         .pipe(rename('app.css'))
         .pipe(prettify())
         .pipe(gulp.dest('assets/css'))
-        .pipe(browserSync.reload({stream: true}))
+        // .pipe(browserSync.reload({stream: true}))
         .pipe(notify({ message: 'Styles task complete' }));
     
     return mergeStream;
@@ -105,7 +107,7 @@ gulp.task('default', function() {
 // Watch
 gulp.task('watch', ['browsersync'], function() {
     // Watch .scss files
-    gulp.watch(['assets/scss/*.scss', 'assets/scss/**/*.scss'], ['styles']).on('change', browserSync.reload);
+    gulp.watch(['assets/scss/*.scss', 'assets/scss/**/*.scss'], ['styles']);
 
     // Watch .js files
     gulp.watch(['assets/js/vendor/*.js', 'assets/js/source/*.js'], ['scripts']).on('change', browserSync.reload);

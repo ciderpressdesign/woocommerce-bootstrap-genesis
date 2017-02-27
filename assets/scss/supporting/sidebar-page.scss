@@ -1,0 +1,109 @@
+// These styles control the pages using the sidebar nav pages
+
+.page-template-template-page_width-sidebar {
+  .entry.page {
+    .page-image {
+      margin-bottom: 20px;
+      @include breakpoint($screen-sm) {
+        width: 60%;
+        float: right;
+        margin-left: 30px;
+        margin-top: 10px;
+      }
+    }
+    .entry-title {
+      font-size: $font-size-h2;
+      margin-top: 0px;
+      padding-top: 0px;
+      @include breakpoint($screen-md) {
+        font-size: $font-size-h1;
+      }
+    }
+  }
+
+  .content {
+    .entry-header {
+      padding-top: 30px;
+      @include breakpoint($screen-sm) {
+        padding-top: 0px;
+      }
+    }
+
+    .entry-title {
+      display: none;
+
+      @include breakpoint($screen-sm) {
+        display: block;
+      }
+    }
+  }
+  .sidebar {
+
+    .entry-title {
+      display: block;
+
+      @include breakpoint($screen-sm) {
+        display: none;
+      }
+    }
+  }
+
+}
+
+.sidebar-page {
+
+  .sidebar-nav {
+    border: 1px solid $gray-light;
+    @include breakpoint($screen-sm) {
+      border: none;
+    }
+  }
+  .sidebar-nav .navbar li.active {
+    display: none;
+    @include breakpoint($screen-sm) {
+      cursor: default;
+      pointer-events: none;
+      display: block;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .navbar-default ul.navbar-nav.nav > li a {
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: none;
+      @include breakpoint($screen-sm) {
+        color: $brand-primary;
+        background: transparent;
+      }
+    }
+    text-transform: uppercase;
+    font-size: 16px;
+  }
+  /* make sidebar nav vertical */
+  @include breakpoint($screen-xs) {
+    .sidebar-nav .navbar .navbar-collapse {
+      padding: 0;
+      max-height: none;
+    }
+    .sidebar-nav .navbar ul {
+      float: none;
+      display: block;
+    }
+    .sidebar-nav .navbar li {
+      float: none;
+      display: block;
+    }
+    .sidebar-nav .navbar li a {
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+    .sidebar-nav .navbar-nav {
+      margin: 7.5px 0;
+    }
+  }
+
+}

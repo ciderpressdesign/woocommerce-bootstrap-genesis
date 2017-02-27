@@ -1,9 +1,68 @@
 /** Site Inner
 ----------------------------------------------------------------------------- */
 .site-inner {
-	padding: $line-height-computed*2 0;
+	padding: 95px 0 30px;
+	@include breakpoint($screen-sm) {
+		padding: 95px 0 0;
+		.home & {
+			padding: 0px;
+		}
+	}
+
+	.home & {
+		padding-top: 0px 15px;
+		@include breakpoint($screen-sm) {
+			padding-top: 0px;
+		}
+	}
+
+	@include breakpoint($screen-lg) {
+	}
 }
 
+/** Sticky Footer
+----------------------------------------------------------------------------- */
+@include breakpoint($screen-sm) {
+	$sticky-footer-height: 350px;
+	$neg-sticky-footer-height: -350px;
+	* {
+		margin: 0;
+	}
+	html, body {
+		height: 100%;
+	}
+	.site-container {
+		min-height: 100%;
+		/* equal to footer height */
+		margin-bottom: $neg-sticky-footer-height;
+	}
+	.site-container:after {
+		content: "";
+		display: block;
+	}
+	.site-footer, .site-container:after {
+		height: $sticky-footer-height;
+	}
+}
+
+/* Text styling
+--------------------------------------------------------------------------------*/
+
+h1 {
+	padding-bottom: 16px;
+}
+
+h2 {
+	padding-bottom: 16px;
+	font-size: 22px;
+	small {
+		font-size: 14px;
+		vertical-align: middle;
+	}
+	@include breakpoint($screen-xs) {
+		font-size: $font-size-h2;
+	}
+}
 /** Footer Widgets
 ----------------------------------------------------------------------------- */
 .footer-widgets {
@@ -91,4 +150,44 @@
 strong {
 	color: $headings-color;
 }
- 
+
+.link-alt {
+	@extend a;
+	color: $link-alt-color;
+	&:hover,
+	&:active,
+	&focus {
+		color: $link-alt-hover-color;
+		text-decoration: $link-alt-hover-decoration;
+	}
+}
+
+.gem-breadcrumb {
+	padding-top: 10px;
+	padding-bottom: 30px;
+
+	li {
+		font-size: $font-size-base;
+		display: inline;
+	}
+	a {
+		color: $brand-primary;
+	}
+	li:last-child a {
+	}
+	a:after {
+		content: "|";
+		padding: 0px 16px;
+
+	}
+	text-transform: uppercase;
+
+}
+
+.post-edit-link {
+	clear: both;
+	display: block;
+	text-align: right;
+	color: $brand-primary;
+}
+

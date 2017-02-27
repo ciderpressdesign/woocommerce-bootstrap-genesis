@@ -24,6 +24,23 @@ function bfg_filter_structural_wrap( $output, $original_output ) {
     return $output;
 }
 
+
+// Add a structural wrap to the sidebar-container
+add_action('genesis_before_content_sidebar_wrap', 'gem_add_sidebar_wrap');
+
+function gem_add_sidebar_wrap()
+{
+    genesis_structural_wrap('content-sidebar-wrap');
+}
+
+add_action('genesis_after_content_sidebar_wrap', 'gem_close_sidebar_wrap');
+
+function gem_close_sidebar_wrap()
+{
+    genesis_structural_wrap('content-sidebar-wrap', 'close');
+}
+
+
 // Adds Filters Automatically from Array Keys
 // @link https://gist.github.com/bryanwillis/0f22c3ddb0d0b9453ad0
 add_action( 'genesis_meta', 'bfg_add_array_filters_genesis_attr' );
@@ -59,11 +76,11 @@ function bfg_add_markup_sanitize_classes( $attr, $context ) {
 
 // Default array of classes to add
 function bfg_merge_genesis_attr_classes() {
-    $navclass = get_theme_mod( 'navtype', 'navbar-static-top' );
     $classes = array(
             'content-sidebar-wrap'      => 'row',
-            'content'                   => 'col-sm-8',
+        'content' => 'col-sm-12',
             'sidebar-primary'           => 'col-sm-4',
+        'entry' => '',
             'sidebar-secondary'         => 'col-sm-2',
             'archive-pagination'        => ( 'numeric' == genesis_get_option( 'posts_nav' ) ) ? 'clearfix bfg-pagination-numeric' : 'clearfix bfg-pagination-prev-next',
             'entry-content'             => 'clearfix',
@@ -72,7 +89,8 @@ function bfg_merge_genesis_attr_classes() {
             'footer-widget-area'        => 'col-sm-6',
             'comment-list'              => 'list-unstyled',
             'home-featured'             => 'jumbotron',
-            'site-header'               => 'navbar navbar-default ' . $navclass
+        'site-header' => 'top-bar-id'
+
     );
     
     if ( has_filter( 'bfg_add_classes' ) ) {
@@ -100,6 +118,12 @@ function bfg_layout_options_modify_classes_to_add( $classes_to_add ) {
     
     if ( 'full-width-content' === $layout ) {
         $classes_to_add['content'] = 'col-sm-12';
+    }
+
+    // sidebar-content          // supported
+    if ('content-sidebar' === $layout) {
+        $classes_to_add['content'] = 'col-sm-9 col-sm-pull-3';
+        $classes_to_add['sidebar-primary'] = 'col-sm-3 col-sm-push-9';
     }
 
     // sidebar-content          // supported

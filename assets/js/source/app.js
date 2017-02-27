@@ -17,7 +17,7 @@
         });
         // scroll body to 0px on click
         $('#back-to-top').click(function () {
-            $('#back-to-top').tooltip('hide');
+            $(this).tooltip('hide');
             $('body,html').animate({
                 scrollTop: 0
             }, 800);
@@ -43,8 +43,8 @@
 
 jQuery(document).ready(function($) {
     $('.menu-link').sidr({
-        side: 'right',
-       body: '.site-container'
+        side: 'right'
+        // body: '.site-container'
     });
 
     $('.sidr-close-link').click( function() {
@@ -101,11 +101,11 @@ jQuery(document).ready(function($) {
 });
 
 
-//Make tabs closeable
-//
+// Make tabs closeable
+
 jQuery(document).ready(function($) {
 
-    $('.filter-sort-tabs li a').click(function (e) {
+    $('.filter-sort-tabs li a').click(function () {
 
         var tab = $(this);
         //var tabpane = tab.data('')
@@ -118,3 +118,121 @@ jQuery(document).ready(function($) {
     });
 
 });
+
+
+// Add class to menu on scroll
+jQuery(document).ready(function ($) {
+    $(window).on("scroll", function () {
+        if ($(window).scrollTop() > 50) {
+            $(".site-header").addClass("active");
+        } else {
+            //remove the background property so it comes transparent again (defined in your css)
+            $(".site-header").removeClass("active");
+        }
+    });
+});
+
+
+jQuery(document).ready(function ($) {
+    $('.product-slides').bxSlider({
+        pagerCustom: '.slide-pager',
+        mode: 'fade',
+        // video: 'true',
+        controls: false,
+        responsive: true,
+        touchEnabled: false
+    });
+});
+
+
+jQuery(document).ready(function ($) {
+    // init Isotope
+    var $grid = $('.archive .products').isotope({
+        itemSelector: '.product',
+        layoutMode: 'fitRows',
+        percentPosition: true,
+        fitRows: {
+            columnWidth: '.product'
+        }
+
+
+    });
+// filter items on button click
+    $('.filter-shapes--shape-link').on('click', function () {
+        var filterValue = $(this).attr('data-filter');
+        console.log($(this));
+        console.log(filterValue);
+        $grid.isotope({filter: filterValue});
+    });
+});
+
+jQuery(document).ready(function ($) {
+    //
+    // $(".slide-product-image").ezPlus({
+    //     cursor: 'pointer',
+    //     imageCrossfade: true,
+    //     zoomType: 'lens',
+    //     lensSize: 200,
+    //     containLensZoom: true
+    // });
+
+    initEZPlus();
+
+    //Triggered when window width is changed.
+    $(window).on("resize", function () {
+        var windowWidth = $(window).width(), // get window width
+            imgWidth = $(".slide-product-image").width(); // get image width
+        //Init elevateZoom
+        $('.zoomContainer').remove();
+        initEZPlus();
+        //display status
+        console.log("Status: Window resized!.");
+        //display image and window width
+        console.log("Image width: " + imgWidth + "px----Window width: " + windowWidth + "px");
+    });
+
+    function initEZPlus() {
+        $(".slide-product-image").ezPlus({
+            responsive: true,
+            zoomType: 'lens',
+            lensSize: 200,
+            containLensZoom: true,
+            cursor: 'crosshair',
+            scrollZoom: false,
+
+            respond: [
+                {
+                    range: '768-992',
+                    tintColour: '#F00',
+                    lensSize: 150
+                },
+                {
+                    range: '993-1200',
+                    tintColour: '#00F',
+                    zoomWindowHeight: 200,
+                    zoomWindowWidth: 200
+                },
+                {
+                    range: '100-768',
+                    enabled: false,
+                    showLens: false
+                }
+            ]
+        });
+    }
+
+// Toggle on click
+    $(".slide-product-image").on('click', function () {
+        if ($('.zoom-enabled').length === 0) {
+            $('.zoomContainer').show();
+            $(this).toggleClass('zoom-enabled');
+        } else {
+            $('.zoomContainer').hide();
+            $(this).toggleClass('zoom-enabled');
+        }
+    });
+
+});
+
+
+

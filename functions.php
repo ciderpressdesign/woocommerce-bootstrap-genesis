@@ -18,8 +18,8 @@ function bfg_childtheme_setup() {
 	include_once( get_template_directory() . '/lib/init.php' );
 
 	// Child theme (do not remove)
-	define( 'BFG_THEME_NAME', 'Bootstrap for Genesis' );
-	define( 'BFG_THEME_URL', 'http://www.recommendwp.com/' );
+    define('BFG_THEME_NAME', 'GemSyndicate');
+    define('BFG_THEME_URL', '');
 	define( 'BFG_THEME_LIB', CHILD_DIR . '/lib/' );
 	define( 'BFG_THEME_LIB_URL', CHILD_URL . '/lib/' );
 	define( 'BFG_THEME_IMAGES', CHILD_URL . '/images/' );
@@ -57,14 +57,14 @@ function bfg_childtheme_setup() {
 	// Structural Wraps
 	add_theme_support( 'genesis-structural-wraps', array(
 		'header',
-		'site-inner',
-		'footer-widgets',
-		'footer',
-		'home-featured'
+        'content-sidebar-wrap',
+//		'footer-widgets',
+//		'footer',
+//		'home-featured'
 	) );
 
 	// WooCommerce Support
-	add_theme_support( 'genesis-connect-woocommerce' );
+//	add_theme_support( 'genesis-connect-woocommerce' );
 
 	// Remove unneeded widget areas
 	unregister_sidebar( 'header-right' );
@@ -80,23 +80,17 @@ function bfg_childtheme_setup() {
 	add_filter( 'widget_text', 'shortcode_unautop' );
 	add_filter( 'widget_text', 'do_shortcode' );
 
-	// Move Featured Image
-	remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
-	add_action( 'genesis_entry_header',  'genesis_do_post_image', 0 );
-
-	// Custom Image Size
-	add_image_size( 'bootstrap-featured', 750, 422, true );
 
 	// Add Accessibility support
 	add_theme_support( 'genesis-accessibility', array( '404-page', 'drop-down-menu', 'headings', 'rems', 'search-form', 'skip-links' ) );
-
-	// TGM Plugin Activation
-	require_once( BFG_THEME_MODULES . 'class-tgm-plugin-activation.php' );
-
-	//* Kirki Helper
-	foreach ( glob( dirname( __FILE__ ) . '/lib/modules/kirki-helpers/*.php' ) as $file ) {
-		require_once $file;
-	}
+//
+//	// TGM Plugin Activation
+//	require_once( BFG_THEME_MODULES . 'class-tgm-plugin-activation.php' );
+//
+//	//* Kirki Helper
+//	foreach ( glob( dirname( __FILE__ ) . '/lib/modules/kirki-helpers/*.php' ) as $file ) {
+//		require_once $file;
+//	}
 
 
 // Include php files from lib folder

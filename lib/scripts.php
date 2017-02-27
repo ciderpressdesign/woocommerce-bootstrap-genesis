@@ -46,8 +46,17 @@ function bfg_theme_scripts() {
         wp_register_script( 'isotope', BFG_THEME_JS . 'isotope.pkgd.min.js', array( 'jquery' ), $version, true );
         wp_enqueue_script( 'isotope' );
 
+        wp_register_script('elevate-zoom', BFG_THEME_JS . 'jquery.ez-plus.min.js', array('jquery'), $version, true);
+        wp_enqueue_script('elevate-zoom');
+
+        wp_register_script('bxslider', BFG_THEME_JS . 'jquery.bxslider.min.js', array('jquery'), $version, true);
+        wp_enqueue_script('bxslider');
+
 		wp_register_script( 'app-js', BFG_THEME_JS . 'app.min.js', array( 'jquery' ), $version, true );
 		wp_enqueue_script( 'app-js' );
+
+
+//        wp_enqueue_style( 'wpb-google-fonts', 'http://fonts.googleapis.com/css?family=Lato:400,700', false );
 	}
 }
 

@@ -1,20 +1,154 @@
 //This is a place for small, reusable components
+.home-section {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 
+.share_link {
+  float: right;
+  display: inline-block;
+  vertical-align: middle;
+  color: transparent;
+  @include breakpoint($screen-xs) {
+    color: black;
+  }
+  &:after {
+    content: "\f237";
+    font-family: "Dashicons";
+    font-size: 26px;
+    color: black;
+    vertical-align: middle;
+    padding-left: 10px;
+    @include breakpoint($screen-xs) {
+    }
+  }
+}
+
+.home-cta {
+  margin-left: -15px;
+  margin-right: -15px;
+  text-align: center;
+  @include breakpoint($screen-xs) {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 .cta {
- // height: 260px;
-  margin: 60px 0px;
+  // height: 260px;
+  @include breakpoint($screen-xs) {
+    margin: 60px 0px;
+  }
   background-size: cover;
+  font-size: 0;
 
-  h1 {
-    font-size: 5em;
+  .cta-col {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+    font-size: $font-size-base;
+  }
+  .cta-headline {
+    @include breakpoint($screen-lg) {
+      font-size: 5em;
+    }
+
+    @include breakpoint($screen-md) {
+      font-size: 4em;
+    }
+    line-height: 1.2;
+    font-size: 3em;
+    color: white;
+    text-shadow: 2px 2px 7px #333;
+    text-transform: uppercase;
+    font-weight: 700;
   }
 
   .cta_content {
-    padding: 70px 60px;
+
+    padding: 20px 0;
+    @include breakpoint($screen-sm) {
+      padding: 40px 0;
+    }
   }
+
+  .cta-subhead {
+    @include breakpoint($screen-lg) {
+      font-size: 2em;
+    }
+
+    @include breakpoint($screen-sm) {
+      font-size: 1.5em;
+    }
+    font-size: 2em;
+    color: white;
+    text-shadow: 2px 2px 7px #333;
+    font-weight: 700;
+  }
+  .cta-button {
+
+    margin-top: 20px;
+
+    @include breakpoint($screen-lg) {
+
+    }
+    @include breakpoint($screen-sm) {
+      padding: 10px 26px;
+      margin-top: 0px;
+      text-align: right;
+    }
+  }
+}
+
+.home-cta {
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.home-product-categories .product {
+  text-align: center;
+}
+
+.home-recent-posts {
+  padding: 60px 0;
+  margin-bottom: 0px;
+  background-color: $gray-dark;
+  h2 {
+    @include breakpoint($screen-sm) {
+      margin-top: 0px;
+    }
+  }
+  .btn {
+    margin-top: 20px;
+  }
+}
+
+.testimonial-block,
+.footer-testimonial {
+  background: $brand-primary;
+  padding: 30px 0px;
+  color: white;
 
 }
 
+.testimonial-block {
+  margin-bottom: 40px;
+}
+
+.testimonial-quote {
+  margin-bottom: 36px;
+  font-size: 1.2em;
+  @include breakpoint($screen-sm) {
+    font-size: 2em;
+  }
+}
+
+.testimonial-quote:before {
+  content: "\f122";
+  font-family: "Dashicons";
+  padding-right: 5px;
+  font-weight: normal;
+}
 
 //Slide Show
 
@@ -22,7 +156,7 @@
 #welcome {
   overflow: hidden;
   //box-shadow: $section-shadow;
-
+  margin-bottom: 0;
   max-height: 600px;
 
   .slide-image {
@@ -37,8 +171,11 @@
   }
   .slide-content-container {
 
-    width: 95%;
     position: relative;
+    display: none;
+    @include breakpoint($screen-xs) {
+      display: block;
+    }
 
   }
 
@@ -51,15 +188,15 @@
       bottom: 80px;
       color: white;
 
-      &.left {
+      &.left-text {
         text-align: left;
       }
 
-      &.middle {
+      &.middle-text {
         left: 50%;
       }
 
-      &.right {
+      &.right-text {
         right: 0;
         text-align: right;
       }
@@ -67,31 +204,45 @@
     }
 
 
+
     %slide-heading {
       padding-top: 0px;
       margin-top: 0px;
       color: white;
-      line-height: .8;
+      line-height: 1;
     }
 
     h1 {
       @extend %slide-heading;
 
-      font-size: 140px;
+      font-size: 48px;
       text-transform: uppercase;
       font-weight:bold;
-      letter-spacing: -8px;
+      //letter-spacing: -8px;
 
     }
 
     h2 {
       @extend %slide-heading;
-      font-size: 66px;
-      letter-spacing: -4px;
+      font-size: 36px;
+      //letter-spacing: -4px;
 
     }
   }
 
+  .carousel-control {
+    @include breakpoint($screen-xs) {
+      &:hover {
+        display: block;
+      }
+    }
+    &.left .glyphicon-chevron-left {
+      margin-left: -40%;
+    }
+    &.right .glyphicon-chevron-right {
+      margin-right: -40%;
+    }
+  }
   .carousel-indicators {
     display: none;
 
@@ -100,11 +251,12 @@
     }
 
     width:95%;
-    left: auto;
+    left: 0;
     text-align: right;
     right:0px;
     bottom: 60px;
     position: relative;
+    margin: 0;
     li {
       margin-left: 5px;
       border-radius: 0px;
@@ -121,10 +273,13 @@
 
 
 .filter-sort-tabs {
-
+  // Tabs styling ---------------------------------------
   .page-title {
-    float: left;
-    margin: 0 14px;
+    @include breakpoint($screen-sm) {
+
+      float: left;
+      margin: 0;
+    }
   }
 
   ul {
@@ -136,12 +291,21 @@
   }
 
   .tab-close {
-    @extend .glyphicon;
-    @extend .glyphicon-menu-down;
+    margin-left: 18px;
+    background: url(../../images/menu-down.png) no-repeat;
+    display: inline-block;
+    margin-top: 5px;
+    height: 14px;
+    width: 20px;
+    vertical-align: middle;
+
+    //@extend .glyphicon;
+    //@extend .glyphicon-menu-down;
   }
   .active .tab-close  {
-      @extend .glyphicon-menu-up;
-
+    //@extend .glyphicon-menu-up;
+    background-image: url(../../images/tab-close.png);
+    vertical-align: top;
   }
 
   li a {
@@ -158,32 +322,110 @@
 
   .nav-tabs {
     border-bottom: none;
+    .filter-by-tab {
+      padding-right: 24px;
+      //float: left;
+      @include breakpoint ($screen-sm) {
+        float: right;
+      }
+    }
+    .filter-by-tab:after {
+      content: " ";
+      border-bottom: 1px solid $text-color;
+      position: absolute;
+      width: 28px;
+      bottom: -1px;
+      right: -1px;
+    }
+    li a {
+
+      border-radius: 10px 10px 0 0;
+      padding: 10px 19px;
+      background: $body-bg;
+      color: $text-color;
+      &:hover,
+      &:active,
+      &:focus {
+        border-bottom: 0px solid transparent !important;
+      }
+      @include breakpoint($screen-xs) {
+        padding: 10px 36px;
+      }
+    }
+    li.active a {
+      background: $text-color;
+      color: $body-bg;
+
+      &:hover,
+      &:active,
+      &:focus {
+        border-bottom: 2px solid transparent !important;
+      }
+    }
   }
-
-
-
 
 }
 
+//   Tab pane styling
 .filter-sort-content {
   z-index: 1000;
   position: relative;
+  margin-top: -2px;
+  @include breakpoint($screen-sm) {
+
+    margin-top: -8px;
+  }
+
+
+
 
   .tab-pane.active {
-    border: 1px solid #ddd;
     padding: 20px;
     margin-right: 2px;
     border-radius: 5px 0px 5px 5px;
+    background: $text-color;
+    color: $body-bg;
+    a {
+      color: $body-bg;
+    }
+    .filter-shapes {
+      &--shape-link {
+        opacity: .8;
+        &:hover {
+          opacity: 1;
+        }
+      }
+      &--shape {
+        text-align: center;
+        width: 80px;
+      }
+
+      &--shape--name {
+        margin-top: 10px;
+      }
+
+    }
+
   }
 
+
+
 }
+
+// -------------------------  Product Overlay
+
 .loop-product-block {
 
   .product_image {
     position: relative;
 
     .product_overlay_content {
-      margin-top: 50px;
+      display: table;
+      height: 100%;
+      img {
+        width: 15px;
+        height: 15px;
+      }
     }
 
     .product_overlay {
@@ -194,10 +436,23 @@
       top: 0;
       right: 0;
       transition: .5s;
-      background: lightsalmon;
+      background: transparentize($brand-primary, .2);
+      pointer-events: none;
     }
     &:hover .product_overlay {
       height: 100%;
+    }
+    .overlay--product-links {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .overlay--product-link {
+      text-transform: uppercase;
+      padding: 10px 5px;
+      font-weight: 700;
+      a {
+        pointer-events: all;
+      }
     }
   }
 
@@ -207,6 +462,56 @@
     }
   }
 }
+
+.woocommerce ul.products {
+  li.product h3,
+  .price {
+    font-size: 18px;
+    text-align: center;
+    display: block;
+    @include breakpoint($screen-xs) {
+      font-size: 18px;
+    }
+  }
+  li.product .price {
+    color: $brand-primary;
+    font-size: 22px;
+
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.home-featured-products {
+  h3, .price {
+    font-size: 1.4em;
+    text-align: center;
+    display: block;
+    @include breakpoint($screen-xs) {
+      font-size: $font-size-h3;
+    }
+  }
+  .price {
+    color: $brand-primary;
+  }
+
+  img {
+    width: 100%;
+  }
+  li {
+    padding-bottom: 40px;
+    @include breakpoint($screen-xs) {
+      padding-bottom: 0;
+    }
+  }
+
+  margin-bottom: 40px;
+}
+
+// For logo backgroudnds @todo -- need a better way
+
 
 // For logo backgroudnds @todo -- need a better way
 
@@ -223,4 +528,65 @@
 
 .is-active {
   @extend .active;
+}
+
+// remove Product Counts from Woocommerce
+
+mark.count {
+  display: none;
+}
+
+// Sub-header view all links
+small a {
+  @extend .link-alt;
+}
+
+.social {
+  @extend %expand;
+}
+
+.nav-tabs {
+  li {
+    background: $body-bg;
+  }
+}
+
+// FAQ page  -------------------------------------------
+
+.faq-title:before {
+  content: "Q";
+  display: inline-block;
+  padding-top: 5px;
+  background: $text-color;
+  color: red;
+  font-size: 36px;
+  vertical-align: middle;
+  margin-right: 12px;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+}
+
+.faq-body .entry-content:before {
+  @extend .faq-title;
+  content: "A";
+  color: black;
+  float: left;
+  padding-top: 0px;
+}
+
+.faq-body .entry-content p {
+  margin-left: 62px;
+}
+
+.faq-group {
+  background: transparent;
+  .panel-body {
+    padding-top: 0px;
+    padding-left: 0px;
+  }
+  .panel-heading {
+    padding-left: 0px;
+  }
 }
